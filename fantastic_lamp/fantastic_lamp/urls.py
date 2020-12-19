@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from holis import views
+from user.views import CreateNewUser
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.holis),
+    path('user/create/', CreateNewUser.as_view())
 ]
