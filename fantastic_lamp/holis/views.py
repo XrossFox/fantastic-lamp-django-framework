@@ -7,4 +7,4 @@ from rest_framework.permissions import IsAuthenticated
 @authentication_classes([SessionAuthentication, BasicAuthentication])
 @permission_classes([IsAuthenticated])
 def holis(request):
-    return Response({"Hoooolis":"Holi, world"})
+    return Response({"Hoooolis":"Holi, "+request.user.username})
