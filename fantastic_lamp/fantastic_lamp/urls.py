@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from holis import views
 from user.views import CreateNewUser
+from post.views import CreatePost
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.holis),
-    path('user/create/', CreateNewUser.as_view())
+    path('user/create/', CreateNewUser.as_view()),
+    path('post/new/', CreatePost.as_view()),
 ]
